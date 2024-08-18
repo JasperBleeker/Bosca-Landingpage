@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "uebers",
+  "info": {
+    "singularName": "ueber",
+    "pluralName": "uebers",
+    "displayName": "Ueber"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pagebase": {
+      "type": "component",
+      "repeatable": false,
+      "component": "base-component.page-base"
+    }
+  }
+}

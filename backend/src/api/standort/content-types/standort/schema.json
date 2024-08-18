@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "standorts",
+  "info": {
+    "singularName": "standort",
+    "pluralName": "standorts",
+    "displayName": "Standort"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pagebase": {
+      "type": "component",
+      "repeatable": false,
+      "component": "base-component.page-base"
+    }
+  }
+}

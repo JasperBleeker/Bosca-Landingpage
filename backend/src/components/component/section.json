@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_component_sections",
+  "info": {
+    "displayName": "Section with Single Image",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.link-button"
+    },
+    "Position": {
+      "type": "enumeration",
+      "enum": [
+        "Left",
+        "Top",
+        "Right"
+      ],
+      "required": true,
+      "default": "Left"
+    }
+  }
+}

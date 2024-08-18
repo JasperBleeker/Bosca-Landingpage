@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_navigation_navigations",
+  "info": {
+    "displayName": "Navigation",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string",
+      "default": "/about",
+      "required": true,
+      "unique": false
+    },
+    "menu": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    },
+    "footer": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

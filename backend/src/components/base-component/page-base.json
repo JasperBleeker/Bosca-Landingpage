@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_base_component_page_bases",
+  "info": {
+    "displayName": "Page Base",
+    "icon": "code",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "heroimage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
