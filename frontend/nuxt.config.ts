@@ -22,11 +22,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     strapiApiKey: process.env.STRAPI_API_KEY, // Only accessible on the server-side
     public: {
-      strapiBaseURL: process.env.STRAPI_BASE_URL || 'http://localhost:1337/api', // Accessible on both server and client
+      strapiBaseURL: process.env.STRAPI_BASE_URL || 'http://localhost:1337', // Accessible on both server and client
     },
   },
   modules: [],
 })
-
-console.log('nuxt.config STRAPI_API_KEY:', process.env.STRAPI_API_KEY)
-console.log('nuxt.config STRAPI_BASE_URL:', process.env.STRAPI_BASE_URL)

@@ -12,10 +12,25 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "pagebase": {
-      "type": "component",
-      "repeatable": false,
-      "component": "base-component.page-base"
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "heroimage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

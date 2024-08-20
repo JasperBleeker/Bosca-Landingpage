@@ -4,17 +4,32 @@
   "info": {
     "singularName": "standort",
     "pluralName": "standorts",
-    "displayName": "Standort"
+    "displayName": "Standort",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "pagebase": {
-      "type": "component",
-      "repeatable": false,
-      "component": "base-component.page-base"
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "heroimage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }

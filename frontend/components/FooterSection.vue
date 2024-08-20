@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-moss text-white p-4 display: flex flex-col w-full items-center md:flex-row justify-between">
+    <footer class="bg-moss text-white p-4 display: flex flex-col w-full items-center md:flex-row justify-between z-50">
         <!-- Footer content -->
         <div class="w-36 md:w-32">
             <NuxtLink to="/">

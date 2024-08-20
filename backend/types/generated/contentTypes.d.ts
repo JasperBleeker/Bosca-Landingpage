@@ -800,7 +800,10 @@ export interface ApiHomeHome extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    pagebase: Attribute.Component<'base-component.page-base'>;
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    heroimage: Attribute.Media<'images'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -902,12 +905,16 @@ export interface ApiStandortStandort extends Schema.SingleType {
     singularName: 'standort';
     pluralName: 'standorts';
     displayName: 'Standort';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    pagebase: Attribute.Component<'base-component.page-base'>;
+    name: Attribute.String & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    heroimage: Attribute.Media<'images'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
