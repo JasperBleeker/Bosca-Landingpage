@@ -1,15 +1,14 @@
 <template>
-    <div>
-
-    </div>
-</template>
-
-<script>
-    export default {
-        
-    }
-</script>
-
-<style lang="scss" scoped>
-
-</style>
+    <HeroSection apiUrl="/api/ueber-fetch">
+          <!--Additional Content-->
+      </HeroSection>
+  </template>
+  
+  <script>
+  
+  </script>
+  
+  <style scoped>
+  /* Additional styles if needed */
+  </style>
+  

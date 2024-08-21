@@ -854,12 +854,16 @@ export interface ApiKontaktKontakt extends Schema.SingleType {
     singularName: 'kontakt';
     pluralName: 'kontakts';
     displayName: 'Kontakt';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    pagebase: Attribute.Component<'base-component.page-base'>;
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    heroimage: Attribute.Media<'images'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -943,12 +947,16 @@ export interface ApiUeberUeber extends Schema.SingleType {
     singularName: 'ueber';
     pluralName: 'uebers';
     displayName: 'Ueber';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    pagebase: Attribute.Component<'base-component.page-base'>;
+    name: Attribute.String & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    heroimage: Attribute.Media<'images'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
