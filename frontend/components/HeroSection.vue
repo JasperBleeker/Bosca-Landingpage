@@ -1,12 +1,16 @@
 <template>
-  <div>
+  <div class="text-moss">
     <div v-if="imageUrl">
       <img :src="imageUrl" :alt="pageData?.attributes.title || 'Hero Image'"
-           class="-z-20 top-0 h-full w-full overflow-hidden fixed object-cover">
+        class="-z-20 top-0 h-full w-full overflow-hidden fixed object-cover">
     </div>
 
-    <div class="h-svh flex flex-col items-center justify-center">
-      <h1 class="text-4xl font-heading-1 text-white text-center md:hidden">{{ pageData?.attributes.title }}</h1>
+    <div class="h-svh flex flex-col items-center">
+      <h1 class="text-4xl font-heading-1 text-white text-center mt-10 md:hidden">{{ pageData?.attributes.title }}</h1>
+    </div>
+    <div class="bg-white flex flex-col items-center">
+      <h1 class="hidden md:block font-heading-1 text-6xl text-center pt-32">{{ pageData?.attributes.title }}</h1>
+      <p class="font-body py-20 px-8 md:pt-6 md:w-3/5">{{ pageData?.attributes.description }}</p>
     </div>
 
     <!-- Slot for additional content on each page -->
