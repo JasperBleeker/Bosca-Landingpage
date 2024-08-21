@@ -829,7 +829,7 @@ export interface ApiHouseHouse extends Schema.SingleType {
     name: Attribute.String & Attribute.Required;
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text;
-    heroimage: Attribute.Media<'images', true> & Attribute.Required;
+    heroimage: Attribute.Media<'images'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

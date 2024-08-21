@@ -1,24 +1,7 @@
-// /server/api/strapi-fetch.ts
-
-interface MenuOption {
-    id: number;
-    link: string;
-    menu: boolean;
-    footer: boolean;
-}
-
-interface PageAttributes {
-    Name: string;
-    MenuOptionen: MenuOption;
-}
-
-interface Page {
-    id: number;
-    attributes: PageAttributes;
-}
+import { computed } from "vue";
 
 interface StrapiResponse {
-    data: Page[];
+    data: any[];
 }
 
 export default defineEventHandler(async (event) => {
@@ -28,7 +11,7 @@ export default defineEventHandler(async (event) => {
     const baseURL = config.public.strapiBaseURL || 'http://localhost:1337/api';
 
     // Fetch data from Strapi
-    const response = await $fetch(`${baseURL}/pages?fields[0]=Name&populate[0]=MenuOptionen`, {
+    const response = await $fetch(`${baseURL}/api/rooms?populate=*`, {
         headers: {
             Authorization: `Bearer ${apiKey}`,
             'Content-Type': 'application/json',
@@ -36,6 +19,7 @@ export default defineEventHandler(async (event) => {
     });
 
     // Assert the response type
+    
     const data = response as StrapiResponse;
 
     // Return the data array

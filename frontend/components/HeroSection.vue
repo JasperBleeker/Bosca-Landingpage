@@ -23,6 +23,26 @@ import { ref } from 'vue';
 import { useRuntimeConfig } from '#app';
 import { useFetch } from '#app';
 
+interface HeroImageAttributes {
+  formats: {
+    large: {
+      url: string;
+    };
+  };
+}
+
+interface PageDataAttributes {
+  title: string;
+  description: string;
+  heroimage: {
+    data: HeroImageAttributes[] | { attributes: HeroImageAttributes };
+  };
+}
+
+interface PageData {
+  attributes: PageDataAttributes;
+}
+
 const props = defineProps({
   apiUrl: {
     type: String,
@@ -31,26 +51,24 @@ const props = defineProps({
 });
 
 const imageUrl = ref('');
-const pageData = ref(null);
+const pageData = ref<PageData | null>(null);
 
-const config = useRuntimeConfig(); // Access the runtime config
+const config = useRuntimeConfig(); 
 const baseURL = config.public.strapiBaseURL;
 
 const { data, error } = await useFetch(props.apiUrl);
 
 if (data.value) {
-  pageData.value = data.value;
+  pageData.value = data.value as PageData;
 
-  const attributes = pageData.value.attributes;
+  const attributes = pageData.value?.attributes;
 
   if (attributes?.heroimage?.data) {
     let heroImage;
 
     if (Array.isArray(attributes.heroimage.data)) {
-      // If data is an array, use the first element
       heroImage = attributes.heroimage.data[0].attributes;
     } else {
-      // If data is an object, use it directly
       heroImage = attributes.heroimage.data.attributes;
     }
 
@@ -66,6 +84,7 @@ if (data.value) {
 } else {
   console.error('Error fetching page data:', error);
 }
+
 </script>
 
 <style scoped>
