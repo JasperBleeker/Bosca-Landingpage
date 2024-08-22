@@ -12,10 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Pictures": {
+    "pictures": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -23,7 +23,7 @@
         "images"
       ]
     },
-    "Thumbnail": {
+    "thumbnail": {
       "type": "media",
       "multiple": false,
       "required": false,

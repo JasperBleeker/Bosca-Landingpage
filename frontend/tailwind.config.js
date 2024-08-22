@@ -20,7 +20,7 @@ export default {
       fontFamily: {
         'heading-1': ['Zenon', 'serif'],
         'heading-2': ['Zenon', 'serif'],
-        'heading-3': ['Inter', 'serif'],
+        'heading-3': ['Inter', 'sans-serif'],
         'body': ['Inter', 'sans-serif'],
       },
     },

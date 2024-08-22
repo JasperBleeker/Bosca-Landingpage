@@ -1,4 +1,5 @@
-import { computed } from "vue";
+import { defineEventHandler } from 'h3';
+import { useRuntimeConfig } from '#imports';
 
 interface StrapiResponse {
     data: any[];
@@ -8,7 +9,7 @@ export default defineEventHandler(async (event) => {
     const config = useRuntimeConfig();
 
     const apiKey = config.strapiApiKey;
-    const baseURL = config.public.strapiBaseURL || 'http://localhost:1337/api';
+    const baseURL = config.public.strapiBaseURL || 'http://localhost:1337';
 
     // Fetch data from Strapi
     const response = await $fetch(`${baseURL}/api/rooms?populate=*`, {

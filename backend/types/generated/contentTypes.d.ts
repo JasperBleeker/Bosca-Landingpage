@@ -894,9 +894,9 @@ export interface ApiRoomRoom extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Title: Attribute.String;
-    Pictures: Attribute.Media<'images', true>;
-    Thumbnail: Attribute.Media<'images'>;
+    title: Attribute.String;
+    pictures: Attribute.Media<'images', true>;
+    thumbnail: Attribute.Media<'images'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
