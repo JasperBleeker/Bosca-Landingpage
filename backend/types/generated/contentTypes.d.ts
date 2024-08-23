@@ -882,6 +882,41 @@ export interface ApiKontaktKontakt extends Schema.SingleType {
   };
 }
 
+export interface ApiPointOfInterestPointOfInterest
+  extends Schema.CollectionType {
+  collectionName: 'point_of_interests';
+  info: {
+    singularName: 'point-of-interest';
+    pluralName: 'point-of-interests';
+    displayName: 'Point of Interest';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    locationpictures: Attribute.Media<'images', true>;
+    is_highlight: Attribute.Boolean & Attribute.DefaultTo<false>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::point-of-interest.point-of-interest',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::point-of-interest.point-of-interest',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRoomRoom extends Schema.CollectionType {
   collectionName: 'rooms';
   info: {
@@ -923,6 +958,7 @@ export interface ApiStandortStandort extends Schema.SingleType {
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text;
     heroimage: Attribute.Media<'images'> & Attribute.Required;
+    locationimage: Attribute.Media<'images'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -996,6 +1032,7 @@ declare module '@strapi/types' {
       'api::home.home': ApiHomeHome;
       'api::house.house': ApiHouseHouse;
       'api::kontakt.kontakt': ApiKontaktKontakt;
+      'api::point-of-interest.point-of-interest': ApiPointOfInterestPointOfInterest;
       'api::room.room': ApiRoomRoom;
       'api::standort.standort': ApiStandortStandort;
       'api::ueber.ueber': ApiUeberUeber;
