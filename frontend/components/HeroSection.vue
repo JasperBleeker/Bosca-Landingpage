@@ -1,7 +1,7 @@
 <template>
   <div class="text-moss">
-    <div v-if="imageUrl">
-      <img :src="imageUrl" :alt="pageData?.attributes.title || 'Hero Image'"
+    <div v-if="heroImageUrl">
+      <img :src="heroImageUrl" :alt="pageData?.attributes.title || 'Hero Image'"
         class="-z-20 top-0 h-full w-full overflow-hidden fixed object-cover">
     </div>
 
@@ -11,7 +11,12 @@
     <div class="bg-white flex flex-col items-center">
       <h1 class="hidden md:block font-heading-1 text-6xl text-center pt-32">{{ pageData?.attributes.title }}</h1>
       <p class="font-body py-20 px-8 md:pt-6 md:w-3/5">{{ pageData?.attributes.description }}</p>
+      <div v-if="locationImageUrl" class="px-12 max-w-2xl">
+      <img :src="locationImageUrl" :alt="pageData?.attributes.title || 'Location Image'">
     </div>
+    </div>
+    
+ 
 
     <!-- Slot for additional content on each page -->
     <slot></slot>
@@ -23,7 +28,7 @@ import { ref } from 'vue';
 import { useRuntimeConfig } from '#app';
 import { useFetch } from '#app';
 
-interface HeroImageAttributes {
+interface ImageAttributes {
   formats: {
     large: {
       url: string;
@@ -35,7 +40,10 @@ interface PageDataAttributes {
   title: string;
   description: string;
   heroimage: {
-    data: HeroImageAttributes[] | { attributes: HeroImageAttributes };
+    data: ImageAttributes[] | { attributes: ImageAttributes };
+  };
+  locationimage: {
+    data: ImageAttributes[] | { attributes: ImageAttributes };
   };
 }
 
@@ -50,35 +58,47 @@ const props = defineProps({
   }
 });
 
-const imageUrl = ref('');
+const heroImageUrl = ref<string>('');
+const locationImageUrl = ref<string>('');
 const pageData = ref<PageData | null>(null);
 
-const config = useRuntimeConfig(); 
+const config = useRuntimeConfig();
 const baseURL = config.public.strapiBaseURL;
 
 const { data, error } = await useFetch(props.apiUrl);
 
 if (data.value) {
   pageData.value = data.value as PageData;
-
   const attributes = pageData.value?.attributes;
 
+  // Handling hero image
   if (attributes?.heroimage?.data) {
-    let heroImage;
-
-    if (Array.isArray(attributes.heroimage.data)) {
-      heroImage = attributes.heroimage.data[0].attributes;
-    } else {
-      heroImage = attributes.heroimage.data.attributes;
-    }
+    const heroImage = Array.isArray(attributes.heroimage.data)
+      ? attributes.heroimage.data[0].attributes
+      : attributes.heroimage.data.attributes;
 
     if (heroImage?.formats?.large?.url) {
-      imageUrl.value = `${baseURL}${heroImage.formats.large.url}`;
+      heroImageUrl.value = `${baseURL}${heroImage.formats.large.url}`;
     } else {
       console.error('Large format of the hero image not found.');
     }
   } else {
     console.error('Hero image data is not available.');
+  }
+
+  // Handling location image
+  if (attributes?.locationimage?.data) {
+    const locationImage = Array.isArray(attributes.locationimage.data)
+      ? attributes.locationimage.data[0].attributes
+      : attributes.locationimage.data.attributes;
+
+    if (locationImage?.formats?.large?.url) { // Adjust format as needed
+      locationImageUrl.value = `${baseURL}${locationImage.formats.large.url}`;
+    } else {
+      console.warn('Large format of the location image not found, using fallback or ignoring.');
+    }
+  } else {
+    console.warn('Location image data is not available, which may be expected.');
   }
 
 } else {
