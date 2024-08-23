@@ -11,7 +11,7 @@
     <div class="bg-white flex flex-col items-center">
       <h1 class="hidden md:block font-heading-1 text-6xl text-center pt-32">{{ pageData?.attributes.title }}</h1>
       <p class="font-body py-20 px-8 md:pt-6 md:w-3/5">{{ pageData?.attributes.description }}</p>
-      <div v-if="locationImageUrl" class="px-12 max-w-2xl">
+      <div v-if="locationImageUrl" class="px-12 pb-16 max-w-2xl">
       <img :src="locationImageUrl" :alt="pageData?.attributes.title || 'Location Image'">
     </div>
     </div>
