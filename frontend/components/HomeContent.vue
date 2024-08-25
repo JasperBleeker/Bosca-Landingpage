@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-moss pb-8 md:grid md:grid-cols-2 md:grid-rows-2 md:px-40">
+    <div class="bg-moss py-8 md:grid md:grid-cols-2 md:grid-rows-2 md:px-40">
         <div v-if="housesData" class="bg-moss text-white md:max-w-lg">
             <h2 class="text-center font-heading-3 text-2xl pt-10 font-bold md:text-left md:text-3xl">{{ housesData.attributes.title }}</h2>
             <p class="px-8 pt-4 md:px-0 md:pb-4">{{ housesData.attributes.description }}</p>
