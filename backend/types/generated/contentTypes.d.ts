@@ -993,6 +993,7 @@ export interface ApiUeberUeber extends Schema.SingleType {
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text;
     heroimage: Attribute.Media<'images'> & Attribute.Required;
+    locationimage: Attribute.Media<'images'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
