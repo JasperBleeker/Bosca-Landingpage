@@ -40,14 +40,19 @@ interface PageDataAttributes {
   title: string;
   description: string;
   heroimage: {
-    data: ImageAttributes[] | { attributes: ImageAttributes };
+    data: { 
+      attributes: ImageAttributes 
+    };
   };
   locationimage: {
-    data: ImageAttributes[] | { attributes: ImageAttributes };
+    data: { 
+      attributes: ImageAttributes 
+    } | null;
   };
 }
 
 interface PageData {
+  id: number;
   attributes: PageDataAttributes;
 }
 
