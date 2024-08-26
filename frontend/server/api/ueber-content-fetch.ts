@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
     const baseURL = config.public.strapiBaseURL || 'http://localhost:1337/api';
 
     // Fetch data from Strapi
-    const response = await $fetch(`${baseURL}/api/ueber?populate[0]=AboutMeSection&populate[1]=AboutMeSection.image`, {
+    const response = await $fetch(`${baseURL}/api/ueber?populate[0]=AboutMeSection&populate[1]=AboutMeSection.image&populate[2]=AboutMeSection.link`, {
         headers: {
             Authorization: `Bearer ${apiKey}`,
             'Content-Type': 'application/json',
