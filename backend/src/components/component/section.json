@@ -40,6 +40,10 @@
       ],
       "required": true,
       "default": "Left"
+    },
+    "is_highlight": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

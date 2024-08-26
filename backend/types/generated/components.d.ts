@@ -15,6 +15,7 @@ export interface ComponentSection extends Schema.Component {
     Position: Attribute.Enumeration<['Left', 'Top', 'Right']> &
       Attribute.Required &
       Attribute.DefaultTo<'Left'>;
+    is_highlight: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 

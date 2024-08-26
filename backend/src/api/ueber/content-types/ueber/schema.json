@@ -32,11 +32,17 @@
       ]
     },
     "locationimage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "AboutMeSection": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.section"
     }
   }
 }

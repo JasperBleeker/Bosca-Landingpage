@@ -994,6 +994,7 @@ export interface ApiUeberUeber extends Schema.SingleType {
     description: Attribute.Text;
     heroimage: Attribute.Media<'images'> & Attribute.Required;
     locationimage: Attribute.Media<'images'>;
+    AboutMeSection: Attribute.Component<'component.section', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
