@@ -1,5 +1,19 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface NavigationNavigation extends Schema.Component {
+  collectionName: 'components_navigation_navigations';
+  info: {
+    displayName: 'Navigation';
+    icon: 'link';
+    description: '';
+  };
+  attributes: {
+    link: Attribute.String & Attribute.Required & Attribute.DefaultTo<'/about'>;
+    menu: Attribute.Boolean & Attribute.DefaultTo<true>;
+    footer: Attribute.Boolean & Attribute.DefaultTo<true>;
+  };
+}
+
 export interface ComponentSection extends Schema.Component {
   collectionName: 'components_component_sections';
   info: {
@@ -11,8 +25,8 @@ export interface ComponentSection extends Schema.Component {
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
-    Link: Attribute.Component<'component.link-button', true>;
-    Position: Attribute.Enumeration<['Left', 'Top', 'Right']> &
+    link: Attribute.Component<'component.link-button', true>;
+    position: Attribute.Enumeration<['Left', 'Right']> &
       Attribute.Required &
       Attribute.DefaultTo<'Left'>;
     is_highlight: Attribute.Boolean & Attribute.DefaultTo<false>;
@@ -39,9 +53,11 @@ export interface ComponentLinkButton extends Schema.Component {
   info: {
     displayName: 'Link Button';
     icon: 'attachment';
+    description: '';
   };
   attributes: {
-    Label: Attribute.String & Attribute.Required;
+    label: Attribute.String & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
   };
 }
 
@@ -60,28 +76,14 @@ export interface BaseComponentPageBase extends Schema.Component {
   };
 }
 
-export interface NavigationNavigation extends Schema.Component {
-  collectionName: 'components_navigation_navigations';
-  info: {
-    displayName: 'Navigation';
-    icon: 'link';
-    description: '';
-  };
-  attributes: {
-    link: Attribute.String & Attribute.Required & Attribute.DefaultTo<'/about'>;
-    menu: Attribute.Boolean & Attribute.DefaultTo<true>;
-    footer: Attribute.Boolean & Attribute.DefaultTo<true>;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'navigation.navigation': NavigationNavigation;
       'component.section': ComponentSection;
       'component.section-with-gallery': ComponentSectionWithGallery;
       'component.link-button': ComponentLinkButton;
       'base-component.page-base': BaseComponentPageBase;
-      'navigation.navigation': NavigationNavigation;
     }
   }
 }

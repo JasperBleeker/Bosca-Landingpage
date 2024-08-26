@@ -26,16 +26,15 @@
       "type": "text",
       "required": true
     },
-    "Link": {
+    "link": {
       "type": "component",
       "repeatable": true,
       "component": "component.link-button"
     },
-    "Position": {
+    "position": {
       "type": "enumeration",
       "enum": [
         "Left",
-        "Top",
         "Right"
       ],
       "required": true,

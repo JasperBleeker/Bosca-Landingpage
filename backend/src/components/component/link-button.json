@@ -2,11 +2,16 @@
   "collectionName": "components_component_link_buttons",
   "info": {
     "displayName": "Link Button",
-    "icon": "attachment"
+    "icon": "attachment",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Label": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
       "type": "string",
       "required": true
     }
