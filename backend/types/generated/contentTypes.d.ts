@@ -864,6 +864,9 @@ export interface ApiKontaktKontakt extends Schema.SingleType {
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text;
     heroimage: Attribute.Media<'images'> & Attribute.Required;
+    adress: Attribute.String;
+    email: Attribute.Email;
+    phone: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
