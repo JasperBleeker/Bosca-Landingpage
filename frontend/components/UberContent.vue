@@ -2,7 +2,7 @@
     <div class="bg-white">
       <div v-for="section in uberData?.attributes.AboutMeSection" :key="section.id"
         :class="section.is_highlight ? 'highlighted-section' : 'regular-section'"
-        class="grid px-8 py-20 md:grid-cols-2">
+        class="grid px-8 py-20 md:gap-8 md:grid-cols-2 md:px-40">
   
         <h2
           class="font-heading-3 text-center text-2xl font-bold pb-8 md:text-3xl md:col-span-1 md:text-left self-end"
