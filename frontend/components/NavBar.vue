@@ -2,7 +2,7 @@
     <div>
       <nav>
         
-        <ul class="font-body font-bold text-2xl text-white flex flex-col items-center justify-end gap-20 text-center md:flex-row">
+        <ul class="font-body font-bold text-xl flex flex-col items-center justify-end gap-6 md:gap-20 text-center md:flex-row">
           <li>
             <NuxtLink to="/">Home</NuxtLink>
           </li>

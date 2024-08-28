@@ -11,15 +11,15 @@
             <NavBar />
         </div>
         
-        <div>
-            <NuxtLink to="/">Impressum</NuxtLink>
+        <div class="pb-8">
+            <NuxtLink to="/impressum">Impressum</NuxtLink>
         </div>
 
     </footer>
 </template>
 
-<script setup lang="ts">
+<script setup>
 
 </script>
 
-<style lang="css" scoped></style>
+<style scoped></style>

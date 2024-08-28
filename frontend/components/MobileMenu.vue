@@ -7,7 +7,7 @@
             fill="white" />
         </svg>
       </button>
-      <NavBar />
+      <NavBar class="text-white" />
     </nav>
   </template>
   

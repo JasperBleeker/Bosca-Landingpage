@@ -6,7 +6,7 @@
     </div>
 
     <div class="h-svh flex flex-col items-center">
-      <h1 class="text-4xl font-heading-1 text-white text-center mt-10 md:hidden">{{ pageData?.attributes.title }}</h1>
+      <h1 class="text-4xl font-heading-1 text-white text-center mt-10 md:hidden px-4">{{ pageData?.attributes.title }}</h1>
     </div>
     <div class="bg-white flex flex-col items-center md:flex-row py-20 px-8 md:py-40 md:px-40 md:items-start">
       <div class="md:w-3/4">

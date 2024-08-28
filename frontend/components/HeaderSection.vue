@@ -7,7 +7,7 @@
                 </NuxtLink>
             </div>
             <div class="col-span-8">
-                <NavBar class="hidden md:block" />
+                <NavBar class="hidden md:block text-white" />
             </div>
 
 

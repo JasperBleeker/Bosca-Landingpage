@@ -1,11 +1,14 @@
 <template>
-  <Title>Bosca Brog</Title>
-
   <NuxtLayout>
+    <Title>Bosca Brog</Title>
 
+
+    
     <NuxtPage />
 
   </NuxtLayout>
+
+
 </template>
 
 <style>
