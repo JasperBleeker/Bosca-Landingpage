@@ -590,6 +590,46 @@ export interface PluginContentReleasesReleaseAction
   };
 }
 
+export interface PluginGoogleMapsConfig extends Schema.SingleType {
+  collectionName: 'google_maps_configs';
+  info: {
+    singularName: 'config';
+    pluralName: 'configs';
+    displayName: 'Google Maps Config';
+  };
+  options: {
+    populateCreatorFields: false;
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    googleMapsKey: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<''>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::google-maps.config',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::google-maps.config',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginI18NLocale extends Schema.CollectionType {
   collectionName: 'i18n_locale';
   info: {
@@ -848,6 +888,37 @@ export interface ApiHouseHouse extends Schema.SingleType {
   };
 }
 
+export interface ApiImpressumImpressum extends Schema.SingleType {
+  collectionName: 'impressums';
+  info: {
+    singularName: 'impressum';
+    pluralName: 'impressums';
+    displayName: 'Impressum';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    text: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::impressum.impressum',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::impressum.impressum',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiKontaktKontakt extends Schema.SingleType {
   collectionName: 'kontakts';
   info: {
@@ -867,6 +938,8 @@ export interface ApiKontaktKontakt extends Schema.SingleType {
     adress: Attribute.String;
     email: Attribute.Email;
     phone: Attribute.String;
+    standort: Attribute.JSON &
+      Attribute.CustomField<'plugin::google-maps.location-picker'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1030,12 +1103,14 @@ declare module '@strapi/types' {
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
+      'plugin::google-maps.config': PluginGoogleMapsConfig;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::home.home': ApiHomeHome;
       'api::house.house': ApiHouseHouse;
+      'api::impressum.impressum': ApiImpressumImpressum;
       'api::kontakt.kontakt': ApiKontaktKontakt;
       'api::point-of-interest.point-of-interest': ApiPointOfInterestPointOfInterest;
       'api::room.room': ApiRoomRoom;

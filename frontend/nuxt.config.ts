@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     strapiApiKey: process.env.STRAPI_API_KEY, // Only accessible on the server-side
     public: {
       strapiBaseURL: process.env.STRAPI_BASE_URL || 'http://localhost:1337', // Accessible on both server and client
+      googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY || 'AIzaSyD2nuujpTqTHhDjGpSphcvC3kq4koZwpHU', // Accessible on both server and client
     },
   },
   modules: [],

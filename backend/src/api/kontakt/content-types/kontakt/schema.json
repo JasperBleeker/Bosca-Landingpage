@@ -40,6 +40,10 @@
     },
     "phone": {
       "type": "string"
+    },
+    "standort": {
+      "type": "customField",
+      "customField": "plugin::google-maps.location-picker"
     }
   }
 }
