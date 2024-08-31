@@ -1,6 +1,6 @@
 <template>
     <header class="">
-        <div class="grid items-center w-full grid-cols-12 px-4 mx-aut">
+        <div class="grid items-center w-full grid-cols-12 px-4 mx-auto fixed bg-white">
             <div class="col-span-3">
                 <NuxtLink to="/" class="h-24">
                     <LogoDark class="h-24 py-4" />

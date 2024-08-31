@@ -20,7 +20,7 @@
           :class="section.position === 'Left' ? 'md:order-1' : 'md:order-2'">
   
         <NuxtLink v-for="link in section.link" :key="link.id" :to="`/${link.url}`"
-          class="order-4 bg-shamrock text-white block text-center py-2 w-40 mx-auto rounded-full font-bold max-h-10 md:mx-0 md:col-span-1"
+          class="order-4 bg-shamrock hover:bg-shamrockdark transition-colors delay-100 duration-200 ease-in-out text-white block text-center py-2 w-40 mx-auto rounded-full font-bold max-h-10 md:mx-0 md:col-span-1"
           :class="section.position === 'Left' ? 'md:order-4' : 'md:order-3'">
           <div>
             <p class="text-center">{{ link.label }}</p>

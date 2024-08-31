@@ -1,15 +1,16 @@
 <template>
     <div class="bg-moss py-8 md:grid md:grid-cols-2 md:grid-rows-2 md:px-40">
         <div v-if="housesData" class="bg-moss text-white md:max-w-lg">
-            <h2 class="text-center font-heading-3 text-2xl pt-10 font-bold md:text-left md:text-3xl">{{ housesData.attributes.title }}</h2>
+            <h2 class="text-center font-heading-3 text-2xl pt-10 font-bold md:text-left md:text-3xl">{{
+                housesData.attributes.title }}</h2>
             <p class="px-8 pt-4 md:px-0 md:pb-4">{{ housesData.attributes.description }}</p>
         </div>
         <div v-else>
             <p>Loading...</p>
         </div>
-        <RoomThumbnails thumbnailUrl="/api/rooms-fetch" class="md:max-w-xl row-span-2 md:mx-auto"/>
-        <NuxtLink to="/haus"
-            class="bg-shamrock text-white block text-center py-2 w-40 mx-auto  rounded-full font-bold max-h-10 md:mx-0">
+        <RoomThumbnails thumbnailUrl="/api/rooms-fetch" class="md:max-w-xl row-span-2 md:mx-auto" />
+        <NuxtLink to="/haus" class="bg-shamrock hover:bg-shamrockdark transition-colors delay-100 duration-200 ease-in-out
+ text-white block text-center py-2 w-40 mx-auto  rounded-full font-bold max-h-10 md:mx-0">
             <div>
                 <p>zum Haus</p>
             </div>

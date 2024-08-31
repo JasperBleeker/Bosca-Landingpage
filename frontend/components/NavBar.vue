@@ -4,19 +4,19 @@
         
         <ul class="font-body font-bold text-xl flex flex-col items-center justify-end gap-6 md:gap-20 text-center md:flex-row">
           <li>
-            <NuxtLink to="/">Home</NuxtLink>
+            <NuxtLink to="/" class="hover:text-shamrock transition-colors delay-100 duration-200 ease-in-out">Home</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/haus">Haus</NuxtLink>
+            <NuxtLink to="/haus" class="hover:text-shamrock transition-colors delay-100 duration-200 ease-in-out">Haus</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/standort">Standort</NuxtLink>
+            <NuxtLink to="/standort" class="hover:text-shamrock transition-colors delay-100 duration-200 ease-in-out">Standort</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/ueber">Über Mich</NuxtLink>
+            <NuxtLink to="/ueber" class="hover:text-shamrock transition-colors delay-100 duration-200 ease-in-out">Über Mich</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/kontakt">Kontakt</NuxtLink>
+            <NuxtLink to="/kontakt" class="hover:text-shamrock transition-colors delay-100 duration-200 ease-in-out">Kontakt</NuxtLink>
           </li>
         </ul>
       </nav>

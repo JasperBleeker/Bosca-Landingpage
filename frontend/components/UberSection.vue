@@ -8,7 +8,7 @@
         <p class="order-3 font-body pb-4 md:col-span-1 md:order-2">{{ uberData?.attributes.description }}</p>
 
         <NuxtLink to="/ueber"
-            class="order-4 bg-shamrock text-white block text-center py-2 w-40 mx-auto rounded-full font-bold max-h-10 md:mx-0 md:col-span-1 md:order-3">
+            class="order-4 bg-shamrock hover:bg-shamrockdark transition-colors delay-100 duration-200 ease-in-out text-white block text-center py-2 w-40 mx-auto rounded-full font-bold max-h-10 md:mx-0 md:col-span-1 md:order-3">
             <div>
                 <p class="text-center">Über mich</p>
             </div>

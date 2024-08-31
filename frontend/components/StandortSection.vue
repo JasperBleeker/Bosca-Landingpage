@@ -4,7 +4,7 @@
         <h2 class="order-1 font-heading-3 text-center text-2xl font-bold pb-8 md:text-3xl md:col-span-1 md:order-2 md:text-left md:row-span-2 self-end">{{ standortData?.attributes.name }}</h2>
         <p class="order-3 font-body pb-4 md:col-span-1">{{ standortData?.attributes.description }}</p>
 
-        <NuxtLink to="/standort" class="order-4 bg-shamrock text-white block text-center py-2 w-40 mx-auto  rounded-full font-bold max-h-10 md:mx-0 md:col-span-1">
+        <NuxtLink to="/standort" class="order-4 bg-shamrock text-white hover:bg-shamrockdark transition-colors delay-100 duration-200 ease-in-out block text-center py-2 w-40 mx-auto  rounded-full font-bold max-h-10 md:mx-0 md:col-span-1">
             <div>
                 <p class="text-center">zum Standort</p>
             </div>

@@ -1,5 +1,5 @@
 <template>
-    <div class="px-8 py-20 md:px-80 min-h-svh">
+    <div class="px-8 pb-20 pt-40 md:px-80 min-h-svh">
       <h1 class="font-heading-1 font-bold text-4xl text-center pb-20">{{ impressumsData?.attributes.title }}</h1>
       <p>{{ impressumsData?.attributes.text }}</p>
     </div>

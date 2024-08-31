@@ -13,6 +13,7 @@ export default {
       colors: {
         moss: '#23291C',
         shamrock: '#737F65',
+        shamrockdark: '#404738',
         seafoam: '#98BAB2',
         sand: '#D7B298',
         white: '#FFFFFF',
