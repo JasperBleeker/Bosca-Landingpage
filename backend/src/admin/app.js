@@ -29,6 +29,9 @@ const config = {
   ],
 };
 
+import favicon from "./extensions/favicon.png";
+
+
 const bootstrap = (app) => {
   console.log(app);
 };
@@ -36,4 +39,12 @@ const bootstrap = (app) => {
 export default {
   config,
   bootstrap,
+
+  config: {
+    head:{
+      favicon: favicon,
+    },
+  },
+  notifications: { releases: false },
+    
 };
