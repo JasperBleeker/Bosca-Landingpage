@@ -8,8 +8,16 @@
     </div>
 </template>
   
-<script setup lang="ts">
-  
+<script>
+export default {
+  head() {
+    return {
+      meta: [
+        { name: 'robots', content: 'noindex, nofollow' }
+      ]
+    }
+  }
+}
 </script>
   
 <style scoped>

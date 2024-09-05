@@ -10,3 +10,4 @@
   @apply text-moss;
 }
 </style>
+
