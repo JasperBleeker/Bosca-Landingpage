@@ -6,12 +6,12 @@
     </div>
 
     <div class="h-svh flex flex-col items-center">
-      <h1 class="text-4xl font-heading-1 text-white text-center mt-60 md:hidden px-4">{{ pageData?.attributes.title }}</h1>
+      <h1 class="text-4xl font-heading-1 text-white text-center mt-60 lg:hidden px-4">{{ pageData?.attributes.title }}</h1>
     </div>
-    <div class="bg-white flex flex-col items-center md:flex-row py-20 px-8 md:py-40 md:px-40 md:items-start">
-      <div class="md:w-3/4">
-        <h1 class="font-heading-1 text-3xl md:text-6xl">{{ pageData?.attributes.title }}</h1>
-        <p id="hero-section" class="font-body py-4 md:pt-6 md:w-3/5">{{ pageData?.attributes.description }}</p>
+    <div class="bg-white flex flex-col items-center lg:flex-row py-20 px-8 lg:py-40 lg:px-40 lg:items-start">
+      <div class="lg:w-3/4">
+        <h1 class="font-heading-1 text-3xl lg:text-6xl">{{ pageData?.attributes.title }}</h1>
+        <p id="hero-section" class="font-body py-4 lg:pt-6 lg:w-3/5">{{ pageData?.attributes.description }}</p>
       </div>
       <div v-if="locationImageUrl" class="max-w-2xl">
         <img :src="locationImageUrl" :alt="pageData?.attributes.title || 'Location Image'">

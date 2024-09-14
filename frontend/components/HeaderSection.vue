@@ -8,11 +8,11 @@
         </NuxtLink>
       </div>
       <div class="col-span-8">
-        <NavBar class="hidden md:block text-white" />
+        <NavBar class="hidden lg:block text-white" />
       </div>
 
       <button :title="mobileMenuOpen ? 'Close Menu' : 'Open Menu'"
-        :aria-label="mobileMenuOpen ? 'Close Menu' : 'Open Menu'" class="col-span-1 md:hidden"
+        :aria-label="mobileMenuOpen ? 'Close Menu' : 'Open Menu'" class="col-span-1 lg:hidden"
         @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen.toString()"
         aria-controls="mobile-menu">
         <svg class="h-6" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">

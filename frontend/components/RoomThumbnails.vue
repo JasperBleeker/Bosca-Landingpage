@@ -1,12 +1,12 @@
 <template>
-    <div class="bg-moss pt-4 md:pt-10">
-        <div v-if="filteredThumbnailsData.length" class="grid gap-4 pb-4 md:grid-cols-2">
+    <div class="bg-moss pt-4 lg:pt-10">
+        <div v-if="filteredThumbnailsData.length" class="grid gap-4 pb-4 lg:grid-cols-2">
             <div v-for="room in filteredThumbnailsData" :key="room.id">
                 <img
                     v-if="room.attributes.thumbnail.data" 
                     :src="baseURL + room.attributes.thumbnail.data.attributes.formats.medium.url"
                     :alt="room.attributes.thumbnail.data.attributes.name"
-                    class="px-8 max-h-60 w-full object-cover md:px-0 md:max-h-44"
+                    class="px-8 max-h-60 w-full object-cover lg:px-0 lg:max-h-44"
                 >
             </div>
         </div>

@@ -2,13 +2,13 @@
     <div v-if="locationsData && locationsData.length > 0" class="bg-white text-moss">
         <div v-for="location in locationsData" :key="location.id"
             :class="location.attributes.is_highlight ? 'highlighted-section' : 'regular-section'"
-            class="py-10 md:flex md:justify-between md:px-28 md:py-20">
+            class="py-10 lg:flex lg:justify-between lg:px-28 lg:py-20">
             <div>
-                <h2 class="font-heading-3 font-bold text-2xl md:text-3xl text-center pt-10 pb-4 md:text-left md:pt-0">{{
+                <h2 class="font-heading-3 font-bold text-2xl lg:text-3xl text-center pt-10 pb-4 lg:text-left lg:pt-0">{{
                     location.attributes.title }}</h2>
-                <p class="font-body px-8 pb-6 md:max-w-xl md:px-0 md:text-lg">{{ location.attributes.description }}</p>
+                <p class="font-body px-8 pb-6 lg:max-w-xl lg:px-0 lg:text-lg">{{ location.attributes.description }}</p>
             </div>
-            <div class="px-8 md:w-1/2 grid grid-cols-2 gap-4">
+            <div class="px-8 lg:w-1/2 grid grid-cols-2 gap-4">
                 <div v-for="(picture, index) in location.attributes.locationpictures.data" :key="index"
                     :class="index === 0 ? 'col-span-2' : ''">
                     <img :src="`${baseURL}${picture.attributes.formats.medium.url}`" alt="picture of poi"

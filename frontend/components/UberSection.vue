@@ -1,14 +1,14 @@
 <template>
-    <div class="bg-white grid px-8 py-20 md:grid-cols-2 md:grid-rows-5 md:px-40 md:gap-x-32">
+    <div class="bg-white grid px-8 py-20 lg:grid-cols-2 lg:px-40 md:px-20 lg:gap-x-32">
         <img :src="`${baseURL}${uberData?.attributes.locationimage.data?.attributes.formats.medium.url}`" alt=""
-            class="order-1 pb-8 md:col-span-1 md:row-span-5 md:order-2">
+            class="order-1 pb-8 lg:col-span-1 lg:row-span-5 lg:order-2 md:mx-auto lg:mx-0 md:w-60 lg:w-full">
         <h2
-            class="order-2 font-heading-3 text-center text-2xl font-bold pb-8 md:text-3xl md:col-span-1 md:order-1 md:text-left self-end">
+            class="order-2 font-heading-3 text-center text-2xl font-bold pb-8 lg:text-3xl lg:col-span-1 lg:order-1 lg:text-left self-end">
             {{ uberData?.attributes.title }}</h2>
-        <p class="order-3 font-body pb-4 md:col-span-1 md:order-2">{{ uberData?.attributes.description }}</p>
+        <p class="order-3 font-body pb-4 lg:col-span-1 lg:order-2">{{ uberData?.attributes.description }}</p>
 
         <NuxtLink to="/ueber"
-            class="order-4 bg-shamrock hover:bg-shamrockdark transition-colors delay-100 duration-200 ease-in-out text-white block text-center py-2 w-40 mx-auto rounded-full font-bold max-h-10 md:mx-0 md:col-span-1 md:order-3">
+            class="order-4 bg-shamrock hover:bg-shamrockdark transition-colors delay-100 duration-200 ease-in-out text-white block text-center py-2 w-40 mx-auto rounded-full font-bold max-h-10 lg:mx-0 lg:col-span-1 lg:order-3">
             <div>
                 <p class="text-center">Über mich</p>
             </div>

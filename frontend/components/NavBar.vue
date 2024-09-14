@@ -2,7 +2,7 @@
     <div>
       <nav>
         
-        <ul class="font-body font-bold text-xl flex flex-col items-center justify-end gap-6 md:gap-20 text-center md:flex-row">
+        <ul class="font-body font-bold text-xl flex flex-col items-center justify-end gap-6 lg:gap-20 text-center lg:flex-row">
           <li>
             <NuxtLink to="/" class="hover:text-shamrock transition-colors delay-100 duration-200 ease-in-out">Home</NuxtLink>
           </li>

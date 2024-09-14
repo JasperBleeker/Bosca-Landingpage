@@ -1,8 +1,8 @@
 <template>
-    <div class="bg-white md:pb-40 md:px-40 md:flex md:gap-28 md:justify-between">
-        <div class="px-8 md:px-0 font-bold">
+    <div class="bg-white lg:pb-40 lg:px-40 lg:flex lg:gap-28 lg:justify-between">
+        <div class="px-8 lg:px-0 font-bold">
             <!-- Clickable Address -->
-            <div v-if="kontaktData?.attributes?.adress" class="flex gap-4 pb-2 md:gap-10 align-center">
+            <div v-if="kontaktData?.attributes?.adress" class="flex gap-4 pb-2 lg:gap-10 align-center">
                 <IconsPin />
                 <p class="align-middle">
                     <a :href="`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(kontaktData?.attributes.adress || '')}`"
@@ -13,7 +13,7 @@
             </div>
 
             <!-- Clickable Email -->
-            <div v-if="kontaktData?.attributes?.email" class="flex gap-4 md:gap-10 pb-2">
+            <div v-if="kontaktData?.attributes?.email" class="flex gap-4 lg:gap-10 pb-2">
                 <IconsAt />
                 <p class="align-middle">
                     <a :href="`mailto:${kontaktData?.attributes.email || ''}`" class="text-moss hover:underline">
@@ -23,7 +23,7 @@
             </div>
 
             <!-- Clickable Phone Number -->
-            <div v-if="kontaktData?.attributes?.phone" class="flex gap-4 md:gap-10 pb-2">
+            <div v-if="kontaktData?.attributes?.phone" class="flex gap-4 lg:gap-10 pb-2">
                 <IconsPhone />
                 <p class="align-middle">
                     <a :href="`tel:${kontaktData?.attributes.phone || ''}`" class="text-moss hover:underline">
@@ -34,7 +34,7 @@
         </div>
 
         <!-- Google Maps Embed -->
-        <div class="py-20 w-full md:py-0">
+        <div class="py-20 w-full lg:py-0">
             <iframe v-if="kontaktData?.attributes?.standort?.coordinates?.lat !== null && kontaktData?.attributes?.standort?.coordinates?.lng !== null"
                 :src="`https://www.google.com/maps/embed/v1/place?key=${config.public.googleMapsApiKey}&q=${kontaktData?.attributes?.standort?.coordinates?.lat},${kontaktData?.attributes?.standort?.coordinates?.lng}`"
                 width="100%" height="450" style="border:0;" allowfullscreen="true" loading="lazy"
