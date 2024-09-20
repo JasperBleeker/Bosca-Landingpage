@@ -29,7 +29,7 @@ const config = {
   ],
 };
 
-import favicon from "./extensions/favicon.png";
+import favicon from "./extensions/favicon.ico";
 
 
 const bootstrap = (app) => {
