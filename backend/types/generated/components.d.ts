@@ -1,16 +1,17 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface NavigationNavigation extends Schema.Component {
-  collectionName: 'components_navigation_navigations';
+export interface BaseComponentPageBase extends Schema.Component {
+  collectionName: 'components_base_component_page_bases';
   info: {
-    displayName: 'Navigation';
-    icon: 'link';
+    displayName: 'Page Base';
+    icon: 'code';
     description: '';
   };
   attributes: {
-    link: Attribute.String & Attribute.Required & Attribute.DefaultTo<'/about'>;
-    menu: Attribute.Boolean & Attribute.DefaultTo<true>;
-    footer: Attribute.Boolean & Attribute.DefaultTo<true>;
+    Name: Attribute.String & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    heroimage: Attribute.Media<'images'> & Attribute.Required;
   };
 }
 
@@ -61,29 +62,28 @@ export interface ComponentLinkButton extends Schema.Component {
   };
 }
 
-export interface BaseComponentPageBase extends Schema.Component {
-  collectionName: 'components_base_component_page_bases';
+export interface NavigationNavigation extends Schema.Component {
+  collectionName: 'components_navigation_navigations';
   info: {
-    displayName: 'Page Base';
-    icon: 'code';
+    displayName: 'Navigation';
+    icon: 'link';
     description: '';
   };
   attributes: {
-    Name: Attribute.String & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.Text;
-    heroimage: Attribute.Media<'images'> & Attribute.Required;
+    link: Attribute.String & Attribute.Required & Attribute.DefaultTo<'/about'>;
+    menu: Attribute.Boolean & Attribute.DefaultTo<true>;
+    footer: Attribute.Boolean & Attribute.DefaultTo<true>;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'navigation.navigation': NavigationNavigation;
+      'base-component.page-base': BaseComponentPageBase;
       'component.section': ComponentSection;
       'component.section-with-gallery': ComponentSectionWithGallery;
       'component.link-button': ComponentLinkButton;
-      'base-component.page-base': BaseComponentPageBase;
+      'navigation.navigation': NavigationNavigation;
     }
   }
 }
