@@ -15,7 +15,11 @@ export default defineNuxtConfig({
     link: [
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-      { href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet', rel: 'stylesheet' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'
+      },
+      
     ]
   },
   app: {
@@ -27,11 +31,12 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    strapiApiKey: process.env.STRAPI_API_KEY, // Only accessible on the server-side
+    strapiApiKey: process.env.STRAPI_API_KEY,
     public: {
-      strapiBaseURL: process.env.STRAPI_BASE_URL || 'http://localhost:1337', // Accessible on both server and client
-      googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY || 'AIzaSyD2nuujpTqTHhDjGpSphcvC3kq4koZwpHU', // Accessible on both server and client
+      strapiBaseURL: process.env.STRAPI_BASE_URL || 'https://your-production-backend-url/api',
+      googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
     },
   },
+  
   modules: [],
 });
