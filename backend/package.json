@@ -31,7 +31,7 @@
     "uuid": "94624c2a-1c6d-47be-a3a6-d1b60860706b"
   },
   "engines": {
-    "node": "22.x"
+    "node": "20.x"
   },
   "license": "MIT",
   "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
