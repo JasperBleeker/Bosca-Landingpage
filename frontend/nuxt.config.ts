@@ -33,7 +33,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     strapiApiKey: process.env.STRAPI_API_KEY,
     public: {
-      strapiBaseURL: process.env.STRAPI_BASE_URL || 'https://your-production-backend-url/api',
+      strapiBaseURL: process.env.STRAPI_BASE_URL || 'https://bosca-9sijs.ondigitalocean.app/bosca-landingpage-backend/api',
       googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
     },
   },

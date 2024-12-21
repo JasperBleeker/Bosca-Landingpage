@@ -8,10 +8,10 @@ export default defineEventHandler(async (event) => {
     const config = useRuntimeConfig();
 
     const apiKey = config.strapiApiKey;
-    const baseURL = config.public.strapiBaseURL || 'http://localhost:1337/api';
+    const baseURL = config.public.strapiBaseURL;
 
     // Fetch data from Strapi
-    const response = await $fetch(`${baseURL}/api/home?populate=*`, {
+    const response = await $fetch(`${baseURL}/home?populate=*`, {
         headers: {
             Authorization: `Bearer ${apiKey}`,
             'Content-Type': 'application/json',
