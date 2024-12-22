@@ -7,6 +7,9 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
+          "connect-src": ["'self'", "https:"],
+          "media-src": ["'self'", "data:", "blob:"],
+          upgradeInsecureRequests: null,
           'connect-src': ["'self'", 'https:'],
           'script-src': ["'self'", 'unsafe-inline', 'https://maps.googleapis.com'],
           'media-src': [
@@ -20,6 +23,7 @@ module.exports = [
             "'self'",
             'blob:',
             'data:',
+            '*.digitaloceanspaces.com',
             'https://maps.gstatic.com',
             'https://maps.googleapis.com',
             'khmdb0.google.com',
@@ -43,15 +47,6 @@ module.exports = [
             'streetviewpixels-pa.googleapis.com',
             'market-assets.strapi.io',
           ],
-          "connect-src": ["'self'", "https:"],
-          "img-src": [
-            "'self'",
-            "data:",
-            "blob:",
-            "*.digitaloceanspaces.com"
-          ],
-          "media-src": ["'self'", "data:", "blob:"],
-          upgradeInsecureRequests: null,
         },
       },
     },
