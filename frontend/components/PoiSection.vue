@@ -11,7 +11,7 @@
             <div class="px-8 lg:w-1/2 grid grid-cols-2 gap-4">
                 <div v-for="(picture, index) in location.attributes.locationpictures.data" :key="index"
                     :class="index === 0 ? 'col-span-2' : ''">
-                    <img :src="`${baseURL}${picture.attributes.formats.medium.url}`" alt="picture of poi"
+                    <img :src="`${picture.attributes.formats.medium.url}`" alt="picture of poi"
                         class="h-full w-full object-cover" />
                 </div>
             </div>
@@ -60,7 +60,6 @@ const props = defineProps({
 const locationsData = ref<LocationData[] | null>(null);
 
 const config = useRuntimeConfig();
-const baseURL = config.public.strapiBaseURL;
 
 const { data, error } = await useFetch<LocationData[]>(props.apiUrl);
 

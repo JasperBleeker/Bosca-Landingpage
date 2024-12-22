@@ -58,7 +58,6 @@ const housesData = ref<HausData | null>(null);
 
 // Config Setup
 const config = useRuntimeConfig();
-const baseURL = config.public.strapiBaseURL;
 
 
 // Haus Data Fetch

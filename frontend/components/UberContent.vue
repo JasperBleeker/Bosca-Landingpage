@@ -15,7 +15,7 @@
           {{ section.description }}
         </p>
   
-        <img :src="baseURL + section.image?.data.attributes.formats.medium.url" alt=""
+        <img :src="section.image?.data.attributes.formats.medium.url" alt=""
           class="pb-8 lg:col-span-1 lg:row-span-5"
           :class="section.position === 'Left' ? 'lg:order-1' : 'lg:order-2'">
   
@@ -92,7 +92,6 @@ const props = defineProps({
 
 const uberData = ref<UberData | null>(null);
 const config = useRuntimeConfig();
-const baseURL = config.public.strapiBaseURL;
 
 try {
     const { data, error } = await useFetch<UberData>(props.apiUrl);

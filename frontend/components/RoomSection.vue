@@ -14,7 +14,7 @@
             class="cursor-pointer"
           >
             <img
-              :src="`${baseURL}${picture.attributes.formats.medium.url}`"
+              :src="`${picture.attributes.formats.medium.url}`"
               :alt="picture.attributes.name"
               class="w-full h-full object-cover"
             />
@@ -49,7 +49,7 @@
         ◀
       </button>
       <img
-        :src="`${baseURL}${currentImage.attributes.formats.medium.url}`"
+        :src="`${currentImage.attributes.formats.medium.url}`"
         :alt="currentImage.attributes.name"
         class="max-w-full max-h-full object-contain"
       />
@@ -103,7 +103,6 @@
   const roomsData = ref<RoomData[] | null>(null);
   
   const config = useRuntimeConfig();
-  const baseURL = config.public.strapiBaseURL;
   
   const { data, error } = await useFetch<RoomData[]>(props.apiUrl);
   

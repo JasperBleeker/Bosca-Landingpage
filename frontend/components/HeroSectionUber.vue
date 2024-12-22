@@ -69,7 +69,6 @@ const locationImageUrl = ref<string>('');
 const pageData = ref<PageData | null>(null);
 
 const config = useRuntimeConfig();
-const baseURL = config.public.strapiBaseURL;
 
 const { data, error } = await useFetch(props.apiUrl);
 
@@ -84,7 +83,7 @@ if (data.value) {
       : attributes.heroimage.data.attributes;
 
     if (heroImage?.formats?.large?.url) {
-      heroImageUrl.value = `${baseURL}${heroImage.formats.large.url}`;
+      heroImageUrl.value = `${heroImage.formats.large.url}`;
     } else {
       console.error('Large format of the hero image not found.');
     }
@@ -99,7 +98,7 @@ if (data.value) {
       : attributes.locationimage.data.attributes;
 
     if (locationImage?.formats?.large?.url) { // Adjust format as needed
-      locationImageUrl.value = `${baseURL}${locationImage.formats.large.url}`;
+      locationImageUrl.value = `${locationImage.formats.large.url}`;
     } else {
       console.warn('Large format of the location image not found, using fallback or ignoring.');
     }

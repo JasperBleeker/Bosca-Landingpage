@@ -1,6 +1,6 @@
 <template>
     <div class="bg-white grid px-8 py-20 lg:grid-cols-2 lg:px-40 md:px-20 lg:gap-x-32">
-        <img :src="`${baseURL}${uberData?.attributes.locationimage.data?.attributes.formats.medium.url}`" alt=""
+        <img :src="`${uberData?.attributes.locationimage.data?.attributes.formats.medium.url}`" alt=""
             class="order-1 pb-8 lg:col-span-1 lg:row-span-5 lg:order-2 md:mx-auto lg:mx-0 md:w-60 lg:w-full">
         <h2
             class="order-2 font-heading-3 text-center text-2xl font-bold pb-8 lg:text-3xl lg:col-span-1 lg:order-1 lg:text-left self-end">
@@ -59,7 +59,7 @@ const props = defineProps({
 
 const uberData = ref<UberData | null>(null);
 const config = useRuntimeConfig();
-const baseURL = config.public.strapiBaseURL;
+
 
 try {
     const { data, error } = await useFetch<UberData>(props.uberUrl);

@@ -4,7 +4,7 @@
             <div v-for="room in filteredThumbnailsData" :key="room.id">
                 <img
                     v-if="room.attributes.thumbnail.data" 
-                    :src="baseURL + room.attributes.thumbnail.data.attributes.formats.medium.url"
+                    :src="room.attributes.thumbnail.data.attributes.formats.medium.url"
                     :alt="room.attributes.thumbnail.data.attributes.name"
                     class="px-8 max-h-60 w-full object-cover lg:px-0 lg:max-h-44"
                 >
@@ -59,7 +59,7 @@ const thumbnailsData = ref<RoomThumbnailsData[] | null>(null);
 const filteredThumbnailsData = ref<RoomThumbnailsData[]>([]);
 
 const config = useRuntimeConfig();
-const baseURL = config.public.strapiBaseURL;
+
 
 try {
     const { data, error } = await useFetch<RoomThumbnailsData[]>(props.thumbnailUrl);
