@@ -43,6 +43,15 @@ module.exports = [
             'streetviewpixels-pa.googleapis.com',
             'market-assets.strapi.io',
           ],
+          "connect-src": ["'self'", "https:"],
+          "img-src": [
+            "'self'",
+            "data:",
+            "blob:",
+            "*.digitaloceanspaces.com"
+          ],
+          "media-src": ["'self'", "data:", "blob:"],
+          upgradeInsecureRequests: null,
         },
       },
     },
@@ -57,4 +66,4 @@ module.exports = [
 ];
 
 
- 
+
