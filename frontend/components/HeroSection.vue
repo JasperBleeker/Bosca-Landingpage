@@ -82,8 +82,8 @@ if (data.value) {
       ? attributes.heroimage.data[0].attributes
       : attributes.heroimage.data.attributes;
 
-    if (heroImage?.formats?.large?.url) {
-      heroImageUrl.value = `${heroImage.formats.large.url}`;
+    if (heroImage?.url) {
+      heroImageUrl.value = `${heroImage.url}`;
     } else {
       console.error('Large format of the hero image not found.');
     }
